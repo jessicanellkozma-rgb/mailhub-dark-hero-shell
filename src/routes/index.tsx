@@ -1,24 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
+import HeroShell from "@/components/HeroShell";
+import dashboardWebp from "@/assets/hero-dashboard.webp";
+import dashboardJpg from "@/assets/hero-dashboard.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Mailhub — Shipping Software for Ecommerce" },
+      {
+        name: "description",
+        content:
+          "AI-powered rate comparison, label printing and tracking, without the subscription. Integrate via the Mailhub Shipping API, MCP-ready for AI agents.",
+      },
+      { property: "og:title", content: "Mailhub — Shipping Software for Ecommerce" },
+      {
+        property: "og:description",
+        content:
+          "Compare carrier rates, print labels and track shipments. No subscription. MCP-ready Shipping API for AI agents.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+    <main className="min-h-screen bg-carbon">
+      <HeroShell
+        h1="Shipping Software for Ecommerce"
+        subline="AI-powered rate comparison, label printing and tracking, without the subscription. Or integrate via our Shipping API, MCP-ready for AI agents."
+        primaryCta={{ label: "Start Shipping Free", action: () => {} }}
+        secondaryCta={{ label: "How It Works", action: () => {} }}
+        visualType="screenshot"
+        visualContent={{
+          src: dashboardWebp,
+          fallbackSrc: dashboardJpg,
+          alt: "Mailhub dashboard showing an order table with live carrier rates",
+          width: 1280,
+          height: 960,
+        }}
       />
-    </div>
+    </main>
   );
 }

@@ -19,6 +19,13 @@
  */
 
 @theme inline {
+  /* Mailhub brand */
+  --font-display: "Libre Franklin", system-ui, sans-serif;
+  --font-body: "Mulish", system-ui, sans-serif;
+  --color-carbon: var(--carbon);
+  --color-smoke: var(--smoke);
+  --color-cornflower: var(--cornflower);
+  --color-egyptian: var(--egyptian);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -63,6 +70,10 @@
 
 :root {
   --radius: 0.625rem;
+  --carbon: oklch(0.266 0.01 80.6); /* #282520 */
+  --smoke: oklch(0.967 0.003 106.4); /* #F4F4F2 */
+  --cornflower: oklch(0.672 0.141 270.9); /* #768FEC */
+  --egyptian: oklch(0.389 0.186 264.7); /* #1034A6 */
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -141,4 +152,42 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+
+/* Mailhub typography scale */
+@utility display-1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.75rem; /* 44px */
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+@utility heading-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.25rem; /* 36px */
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+@utility text-body-base {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@utility text-body-sm {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+@utility button-lg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
 }
