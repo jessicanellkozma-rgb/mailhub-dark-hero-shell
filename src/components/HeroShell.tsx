@@ -11,13 +11,13 @@ export type HeroImage = {
   /** Preferred optimized source (WebP). */
   src: string;
   /** Optional fallback for browsers without WebP support. */
-  fallbackSrc?: string;
+  fallbackSrc?: string | undefined;
   /** Optional responsive sources, e.g. "hero@1x.webp 640w, hero@2x.webp 1280w". */
-  srcSet?: string;
-  sizes?: string;
+  srcSet?: string | undefined;
+  sizes?: string | undefined;
   alt: string;
-  width?: number;
-  height?: number;
+  width?: number | undefined;
+  height?: number | undefined;
 };
 
 export type HeroCta = {
@@ -29,14 +29,14 @@ export type HeroShellProps = {
   h1: string;
   subline: string;
   primaryCta: HeroCta;
-  secondaryCta?: HeroCta;
-  visualType?: HeroVisualType;
+  secondaryCta?: HeroCta | undefined;
+  visualType?: HeroVisualType | undefined;
   /** Image object for screenshot/illustration; string for code/config snippets; node for custom. */
-  visualContent?: HeroImage | string | ReactNode;
+  visualContent?: HeroImage | string | ReactNode | undefined;
   /** Optional label above a code/config block, e.g. "mcp.json". */
-  visualLabel?: string;
+  visualLabel?: string | undefined;
   /** Page density: "comfortable" uses display-1 (44px), "compact" uses h1 (36px). */
-  density?: "comfortable" | "compact";
+  density?: "comfortable" | "compact" | undefined;
 };
 
 function isHeroImage(value: unknown): value is HeroImage {
@@ -62,7 +62,7 @@ function HeroImageVisual({ image }: { image: HeroImage }) {
   );
 }
 
-function HeroCodeVisual({ code, label }: { code: string; label?: string }) {
+function HeroCodeVisual({ code, label }: { code: string; label?: string | undefined }) {
   return (
     <div className="w-full overflow-hidden rounded-md border border-smoke/20 bg-smoke/[0.04] text-left">
       {label ? (
