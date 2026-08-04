@@ -70,10 +70,10 @@
 
 :root {
   --radius: 0.625rem;
-  --carbon: oklch(0.269 0.011 74.5); /* #282520 */
-  --smoke: oklch(0.962 0.001 106.4); /* #F4F4F2 */
-  --cornflower: oklch(0.669 0.145 273.6); /* #768FEC */
-  --egyptian: oklch(0.399 0.147 267.5); /* Egyptian Blue */
+  --carbon: oklch(0.266 0.01 80.6); /* #282520 */
+  --smoke: oklch(0.967 0.003 106.4); /* #F4F4F2 */
+  --cornflower: oklch(0.672 0.141 270.9); /* #768FEC */
+  --egyptian: oklch(0.389 0.186 264.7); /* #1034A6 */
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
