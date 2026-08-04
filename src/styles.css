@@ -19,6 +19,13 @@
  */
 
 @theme inline {
+  /* Mailhub brand */
+  --font-display: "Libre Franklin", system-ui, sans-serif;
+  --font-body: "Mulish", system-ui, sans-serif;
+  --color-carbon: var(--carbon);
+  --color-smoke: var(--smoke);
+  --color-cornflower: var(--cornflower);
+  --color-egyptian: var(--egyptian);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -63,6 +70,10 @@
 
 :root {
   --radius: 0.625rem;
+  --carbon: oklch(0.269 0.011 74.5); /* #282520 */
+  --smoke: oklch(0.962 0.001 106.4); /* #F4F4F2 */
+  --cornflower: oklch(0.669 0.145 273.6); /* #768FEC */
+  --egyptian: oklch(0.399 0.147 267.5); /* Egyptian Blue */
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
